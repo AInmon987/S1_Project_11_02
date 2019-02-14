@@ -13,7 +13,18 @@
    student union.
 
 */
-
+// The var is for the date
+var thisDate = new Date();
+// The var of dateString delcares the date as a text string by using the current specified locale.
+var dateString = thisDate.toLocaleString();
+// Makes the text string into a secondary heading format. 
+var dateHTML = "<h2>" + dateString + "</h2>";
+// Gets the day of the week for the date and for the text string to show the date of the week. 
+var thisDay = thisDate.getDay();
+// makes the time of the date to change every time reendered, also to get the information inside of the function getEvent.
+var eventHTML = getEvent(thisDay);
+// inserting html variable and the date var before and end of the element. 
+document.getElementById("unionToday").insertAdjacentHTML('beforeend', (dateHTML + eventHTML));
 
 function getEvent(day) {
 
